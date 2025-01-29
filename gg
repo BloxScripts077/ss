@@ -2,6 +2,7 @@
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UICornerMain = Instance.new("UICorner")
+local BorderFrame = Instance.new("Frame") -- This will be the fast color-changing border
 
 local TitleLabel = Instance.new("TextLabel")
 local GreyLine1 = Instance.new("Frame")
@@ -37,6 +38,26 @@ MainFrame.Selectable = true
 -- UICorner for main frame
 UICornerMain.Parent = MainFrame
 UICornerMain.CornerRadius = UDim.new(0.15, 0)
+
+-- Fast Color Changing Border Frame (Outer border)
+BorderFrame.Parent = MainFrame
+BorderFrame.Size = UDim2.new(1, 0, 1, 0)
+BorderFrame.Position = UDim2.new(0, 0, 0, 0)
+BorderFrame.BorderSizePixel = 6  -- Thickness of the border
+BorderFrame.BorderColor3 = Color3.fromRGB(0, 255, 255)  -- Starting Cyan color
+BorderFrame.BackgroundTransparency = 1
+
+-- Create a tween service for color animation
+local TweenService = game:GetService("TweenService")
+local function createColorTween(frame, targetColor)
+    local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true)  -- Fast color change loop
+    local goal = {BorderColor3 = targetColor}
+    local tween = TweenService:Create(frame, tweenInfo, goal)
+    tween:Play()
+end
+
+-- Initiate the fast color-changing effect
+createColorTween(BorderFrame, Color3.fromRGB(255, 0, 0))  -- Red color change cycle (you can modify this to any cycle of colors)
 
 -- Title Configuration
 TitleLabel.Parent = MainFrame
