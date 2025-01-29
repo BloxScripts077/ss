@@ -1,0 +1,156 @@
+-- GUI Elements
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICornerMain = Instance.new("UICorner")
+
+local TitleLabel = Instance.new("TextLabel")
+local GreyLine1 = Instance.new("Frame")
+local GreyLine2 = Instance.new("Frame")
+
+local EnableForceAcceptButton = Instance.new("TextButton")
+local EnableTradeFreezeButton = Instance.new("TextButton")
+
+local ForceAcceptDot = Instance.new("Frame")
+local ForceAcceptLabel = Instance.new("TextLabel")
+
+local TradeFreezeDot = Instance.new("Frame")
+local TradeFreezeLabel = Instance.new("TextLabel")
+
+local FooterLabel1 = Instance.new("TextLabel") -- Yellow footer
+local FooterLabel2 = Instance.new("TextLabel") -- Cyan footer
+
+-- Parent GUI to CoreGui
+ScreenGui.Parent = game.CoreGui
+
+-- MainFrame Configuration
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)  -- Black background
+MainFrame.BackgroundTransparency = 0.15  -- Slight transparency
+MainFrame.Size = UDim2.new(0, 320, 0, 300)
+MainFrame.Position = UDim2.new(0.35, 0, 0.35, 0)
+MainFrame.BorderSizePixel = 3  -- Border thickness
+MainFrame.BorderColor3 = Color3.fromRGB(0, 255, 255)  -- Cyan border color
+MainFrame.Draggable = true
+MainFrame.Active = true
+MainFrame.Selectable = true
+
+-- UICorner for main frame
+UICornerMain.Parent = MainFrame
+UICornerMain.CornerRadius = UDim.new(0.15, 0)
+
+-- Title Configuration
+TitleLabel.Parent = MainFrame
+TitleLabel.Text = "[Blox Fruits Trade Stealer]"
+TitleLabel.Size = UDim2.new(1, 0, 0, 40)
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.TextSize = 20
+
+-- Grey Line 1 Configuration
+GreyLine1.Parent = MainFrame
+GreyLine1.Size = UDim2.new(0.9, 0, 0, 2)
+GreyLine1.Position = UDim2.new(0.05, 0, 0.15, 0)
+GreyLine1.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+
+-- EnableForceAcceptButton Configuration
+EnableForceAcceptButton.Parent = MainFrame
+EnableForceAcceptButton.Text = "Enable Force Accept"
+EnableForceAcceptButton.Size = UDim2.new(0.8, 0, 0, 35)
+EnableForceAcceptButton.Position = UDim2.new(0.1, 0, 0.2, 0)
+EnableForceAcceptButton.BackgroundColor3 = Color3.fromRGB(50, 120, 255)
+EnableForceAcceptButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+EnableForceAcceptButton.Font = Enum.Font.GothamBold
+EnableForceAcceptButton.TextSize = 16
+
+local ButtonCorner1 = Instance.new("UICorner", EnableForceAcceptButton)
+ButtonCorner1.CornerRadius = UDim.new(0.2, 0)
+
+-- EnableTradeFreezeButton Configuration
+EnableTradeFreezeButton.Parent = MainFrame
+EnableTradeFreezeButton.Text = "Enable Trade Freeze"
+EnableTradeFreezeButton.Size = UDim2.new(0.8, 0, 0, 35)
+EnableTradeFreezeButton.Position = UDim2.new(0.1, 0, 0.35, 0)
+EnableTradeFreezeButton.BackgroundColor3 = Color3.fromRGB(50, 120, 255)
+EnableTradeFreezeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+EnableTradeFreezeButton.Font = Enum.Font.GothamBold
+EnableTradeFreezeButton.TextSize = 16
+
+local ButtonCorner2 = Instance.new("UICorner", EnableTradeFreezeButton)
+ButtonCorner2.CornerRadius = UDim.new(0.2, 0)
+
+-- Grey Line 2 Configuration
+GreyLine2.Parent = MainFrame
+GreyLine2.Size = UDim2.new(0.9, 0, 0, 2)
+GreyLine2.Position = UDim2.new(0.05, 0, 0.5, 0)
+GreyLine2.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+
+-- ForceAccept Dot and Label
+ForceAcceptDot.Parent = MainFrame
+ForceAcceptDot.Size = UDim2.new(0, 15, 0, 15)
+ForceAcceptDot.Position = UDim2.new(0.05, 0, 0.58, 0)
+ForceAcceptDot.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+
+local DotCorner1 = Instance.new("UICorner", ForceAcceptDot)
+DotCorner1.CornerRadius = UDim.new(1, 0)
+
+ForceAcceptLabel.Parent = MainFrame
+ForceAcceptLabel.Text = "Force Accept"
+ForceAcceptLabel.Size = UDim2.new(0.6, 0, 0, 20)
+ForceAcceptLabel.Position = UDim2.new(0.2, 0, 0.575, 0)
+ForceAcceptLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+ForceAcceptLabel.BackgroundTransparency = 1
+ForceAcceptLabel.Font = Enum.Font.GothamBold
+ForceAcceptLabel.TextSize = 18
+
+-- TradeFreeze Dot and Label
+TradeFreezeDot.Parent = MainFrame
+TradeFreezeDot.Size = UDim2.new(0, 15, 0, 15)
+TradeFreezeDot.Position = UDim2.new(0.05, 0, 0.72, 0)
+TradeFreezeDot.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+
+local DotCorner2 = Instance.new("UICorner", TradeFreezeDot)
+DotCorner2.CornerRadius = UDim.new(1, 0)
+
+TradeFreezeLabel.Parent = MainFrame
+TradeFreezeLabel.Text = "Trade Freeze"
+TradeFreezeLabel.Size = UDim2.new(0.6, 0, 0, 20)
+TradeFreezeLabel.Position = UDim2.new(0.2, 0, 0.71, 0)
+TradeFreezeLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TradeFreezeLabel.BackgroundTransparency = 1
+TradeFreezeLabel.Font = Enum.Font.GothamBold
+TradeFreezeLabel.TextSize = 18
+
+-- Footer Configuration
+FooterLabel1.Parent = MainFrame
+FooterLabel1.Text = "💡 Trade Anyone And Use The Functions"
+FooterLabel1.Size = UDim2.new(1, 0, 0, 20)
+FooterLabel1.Position = UDim2.new(0, 0, 0.83, 0)
+FooterLabel1.TextColor3 = Color3.fromRGB(255, 255, 0)  -- Yellow
+FooterLabel1.BackgroundTransparency = 1
+FooterLabel1.Font = Enum.Font.GothamBold
+FooterLabel1.TextSize = 14
+
+FooterLabel2.Parent = MainFrame
+FooterLabel2.Text = "Created By Astroscripting"
+FooterLabel2.Size = UDim2.new(1, 0, 0, 20)
+FooterLabel2.Position = UDim2.new(0, 0, 0.87, 0)
+FooterLabel2.TextColor3 = Color3.fromRGB(0, 255, 255)  -- Cyan
+FooterLabel2.BackgroundTransparency = 1
+FooterLabel2.Font = Enum.Font.GothamBold
+FooterLabel2.TextSize = 14
+
+-- Button Actions
+local function setStatus(button, label, dot)
+    local active = dot.BackgroundColor3 == Color3.fromRGB(255, 0, 0)
+    dot.BackgroundColor3 = active and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
+    label.TextColor3 = active and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
+end
+
+EnableForceAcceptButton.MouseButton1Click:Connect(function()
+    setStatus(EnableForceAcceptButton, ForceAcceptLabel, ForceAcceptDot)
+end)
+
+EnableTradeFreezeButton.MouseButton1Click:Connect(function()
+    setStatus(EnableTradeFreezeButton, TradeFreezeLabel, TradeFreezeDot)
+end)
